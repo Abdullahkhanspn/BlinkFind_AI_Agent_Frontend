@@ -36,7 +36,8 @@ function sendToRasa(query) {
     fetch('https://blinkfind-ai.onrender.com/webhooks/rest/webhook', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sender: 'user', message: query })
+        body: JSON.stringify({ sender: 'user', message: query }),
+        mode: 'cors'  // Ensure CORS mode is enabled
     })
     .then(response => {
         if (!response.ok) throw new Error('Server response: ' + response.status);
