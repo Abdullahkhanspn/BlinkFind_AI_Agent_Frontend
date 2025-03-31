@@ -33,7 +33,7 @@ function sendMessage() {
 
 function sendToRasa(query) {
     addMessage('Typing...', 'ai', true);
-    fetch('http://localhost:5005/webhooks/rest/webhook', {
+    fetch('https://blinkfind-ai.onrender.com/webhooks/rest/webhook', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sender: 'user', message: query })
